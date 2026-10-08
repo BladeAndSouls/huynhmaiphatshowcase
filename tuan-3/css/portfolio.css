@@ -1,0 +1,611 @@
+/**
+ * ====================================================================
+ * GIÁO TRÌNH THIẾT KẾ WEB - HỌC PHẦN 111101 (ĐẠI HỌC LẠC HỒNG)
+ * BÀI THỰC HÀNH TUẦN 3: CSS LAYOUT SYSTEM (FLEXBOX & GRID)
+ * Sinh viên thực hiện: Huỳnh Mai Phát
+ * ====================================================================
+ * Yêu cầu giáo trình:
+ * 1. Bố cục tổng thể (Hoạt động 2, trang 28):
+ *    - Sử dụng CSS Grid với grid-template-areas:
+ *      Header (toàn bộ chiều ngang), Sidebar (250px), Main Content (phần còn lại), Footer (dưới cùng).
+ * 2. Khu vực Kỹ năng (Skills Section):
+ *    - Sử dụng Flexbox, flex-wrap: wrap, khoảng cách gap: 15px, căn giữa các item.
+ * 3. Thách thức "The Grid Master" (Trang 32):
+ *    - Khu vực dự án hiển thị ít nhất 6 items bằng CSS Grid có kích thước bằng nhau.
+ * 4. Bài tập mở rộng: "Bảng giá dịch vụ" (Trang 30):
+ *    - 3 bảng giá bằng Flexbox Cards, nút "Mua ngay" luôn nằm sát đáy (margin-top: auto), hover scale.
+ * 5. TUYỆT ĐỐI KHÔNG DÙNG ẢNH (Không dùng thẻ <img>) theo yêu cầu.
+ * ====================================================================
+ */
+
+/* ==================================================================
+ * 1. RESET CSS & BIẾN CƠ BẢN (THEO GIÁO TRÌNH)
+ * ================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==================================================================
+ * 2. BỐ CỤC CHÍNH CSS GRID (THEO HOẠT ĐỘNG 2 - TRANG 28 GIÁO TRÌNH)
+ * Grid-template-areas: Header trên cùng, Sidebar 250px, Main, Footer
+ * ================================================================== */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+/* --- HEADER (Chiếm toàn bộ chiều ngang) --- */
+.site-header {
+  grid-area: header;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #2563eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon-box {
+  width: 40px;
+  height: 40px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-text h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.logo-text span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header-nav a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: #38bdf8;
+}
+
+/* --- SIDEBAR (Rộng cố định 250px - Bên trái) --- */
+.site-sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Avatar biểu tượng CSS (Không dùng ảnh) */
+.user-avatar-badge {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 auto 1rem auto;
+  border: 4px solid #dbeafe;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-profile {
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+}
+
+.sidebar-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sidebar-title {
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.sidebar-menu h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.sidebar-info-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.sidebar-info-box p {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-info-box strong {
+  color: #0f172a;
+}
+
+/* --- MAIN CONTENT (Bên phải - Chiếm toàn bộ phần còn lại) --- */
+.site-main {
+  grid-area: main;
+  padding: 2.5rem;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.content-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+}
+
+.section-heading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-heading p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Hero Intro trong Main */
+.hero-box {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-box h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.hero-box h2 span {
+  color: #38bdf8;
+}
+
+.hero-box p {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge-pill {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ==================================================================
+ * 3. KHU VỰC KỸ NĂNG: SỬ DỤNG FLEXBOX (HOẠT ĐỘNG 2 - TRANG 28)
+ * Prompt mẫu giáo trình:
+ * "Sử dụng Flexbox để các item hiển thị dạng hàng ngang, tự động
+ * xuống dòng (flex-wrap), khoảng cách giữa các item là 15px và căn giữa"
+ * ================================================================== */
+.skills-flex-container {
+  display: flex;
+  flex-wrap: wrap;       /* Tự động xuống dòng khi thiếu không gian */
+  gap: 15px;              /* Khoảng cách 15px chuẩn giáo trình */
+  justify-content: center;/* Căn giữa các item */
+  padding: 1rem 0;
+}
+
+.skill-pill-card {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.skill-pill-card:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.skill-icon {
+  font-size: 1.25rem;
+}
+
+/* ==================================================================
+ * 4. THÁCH THỨC "THE GRID MASTER" - PROJECT GALLERY (TRANG 32)
+ * Yêu cầu: Tạo lưới hiển thị các dự án (ít nhất 6 item) bằng CSS Grid
+ * sao cho các item có kích thước bằng nhau. Tuyệt đối KHÔNG DÙNG ẢNH.
+ * ================================================================== */
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+  gap: 20px;                             /* Khoảng cách đồng nhất bằng gap */
+}
+
+.project-box-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-box-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #93c5fd;
+}
+
+/* Khối CSS giả lập thay thế cho ảnh */
+.project-banner-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-banner-placeholder .code-badge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  background: rgba(37, 99, 235, 0.4);
+  color: #60a5fa;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+
+.project-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.project-tags-flex {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.tech-tag-sm {
+  font-size: 0.75rem;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.project-action-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+
+.project-action-link:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+/* ==================================================================
+ * 5. BÀI TẬP MỞ RỘNG: BẢNG GIÁ DỊCH VỤ (TRANG 30 GIÁO TRÌNH)
+ * Yêu cầu:
+ * - 3 bảng giá (Basic, Pro, Enterprise) nằm ngang hàng nhau bằng Flexbox
+ * - Nút "Mua ngay" luôn nằm sát đáy bằng flex-direction: column & margin-top: auto
+ * - Khi hover vào bảng giá, bảng phóng to nhẹ (transform: scale) và đổi màu
+ * ================================================================== */
+.pricing-flex-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.pricing-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column; /* Cho phép nút nằm sát đáy qua margin-top: auto */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: scale(1.03); /* Phóng to nhẹ theo đúng yêu cầu giáo trình */
+  border-color: #2563eb;
+  box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.15);
+}
+
+.pricing-card.popular {
+  border: 2px solid #2563eb;
+  position: relative;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.pricing-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pricing-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin: 0.75rem 0;
+}
+
+.pricing-price span {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.2rem 0 2rem 0;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: #16a34a;
+  font-weight: bold;
+}
+
+/* Nút "Mua ngay" luôn nằm sát đáy bảng giá theo đúng yêu cầu giáo trình */
+.btn-buy-now {
+  margin-top: auto; /* Sát đáy */
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.btn-buy-now:hover {
+  background: #1d4ed8;
+}
+
+.pricing-card:not(.popular) .btn-buy-now {
+  background: #0f172a;
+}
+
+.pricing-card:not(.popular) .btn-buy-now:hover {
+  background: #1e293b;
+}
+
+/* ==================================================================
+ * 6. FOOTER (CHIẾM TOÀN BỘ CHIỀU NGANG)
+ * ================================================================== */
+.site-footer {
+  grid-area: footer;
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #1e293b;
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  color: #cbd5e1;
+}
+
+.site-footer span {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* ==================================================================
+ * 7. RESPONSIVE ĐIỀU CHỈNH KHI THU NHỎ MÀN HÌNH
+ * ================================================================== */
+@media (max-width: 1024px) {
+  .project-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-flex-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .site-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .project-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-main {
+    padding: 1.5rem;
+  }
+}

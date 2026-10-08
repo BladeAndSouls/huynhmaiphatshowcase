@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huỳnh Mai Phát | Tuần 3: CSS Layout System (Flexbox & Grid)</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Bài tập Tuần 3 Học phần 111101 Thiết kế Web - Đại học Lạc Hồng: CSS Layout System (Flexbox & Grid) của sinh viên Huỳnh Mai Phát.">
+  <meta name="author" content="Huỳnh Mai Phát">
+
+  <!-- Stylesheet Tuần 3 -->
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+  <!-- ==============================================================
+   * CẤU TRÚC TỔNG THỂ DÀN TRANG CSS GRID (HOẠT ĐỘNG 2 - TRANG 28)
+   * Grid-template-areas: "header header" "sidebar main" "footer footer"
+   * ============================================================== -->
+  <div class="portfolio-layout">
+
+    <!-- 1. HEADER (TOÀN BỘ CHIỀU NGANG) -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="header-logo">
+          <div class="logo-icon-box">HMP</div>
+          <div class="logo-text">
+            <h1>Huỳnh Mai Phát</h1>
+            <span>Học phần 111101 • Tuần 3: Flexbox & Grid</span>
+          </div>
+        </div>
+
+        <nav class="header-nav" aria-label="Điều hướng chính">
+          <ul>
+            <li><a href="#about">Giới Thiệu</a></li>
+            <li><a href="#skills">Kỹ Năng (Flexbox)</a></li>
+            <li><a href="#projects">Dự Án (The Grid Master)</a></li>
+            <li><a href="#pricing">Bảng Giá (Bài Tập 2)</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 2. SIDEBAR (BÊN TRÁI RỘNG 250PX THEO GIÁO TRÌNH) -->
+    <aside class="site-sidebar">
+      <!-- Khối Avatar bằng biểu tượng CSS thuần (Không dùng ảnh thẻ img) -->
+      <div class="sidebar-profile">
+        <div class="user-avatar-badge" aria-label="Avatar Huỳnh Mai Phát">
+          HMP
+        </div>
+        <h2 class="sidebar-name">Huỳnh Mai Phát</h2>
+        <p class="sidebar-title">Frontend Developer</p>
+      </div>
+
+      <nav class="sidebar-menu" aria-label="Mục lục nội dung">
+        <h4>Điều Hướng Trang</h4>
+        <ul>
+          <li><a href="#about" class="active">● Tổng Quan Bản Thân</a></li>
+          <li><a href="#skills">● Mục Kỹ Năng (Flexbox)</a></li>
+          <li><a href="#projects">● 6 Dự Án (Grid Master)</a></li>
+          <li><a href="#pricing">● Bảng Giá Dịch Vụ</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-info-box">
+        <p><strong>Trường:</strong> ĐH Lạc Hồng (LHU)</p>
+        <p><strong>Học phần:</strong> Thiết kế Web (111101)</p>
+        <p><strong>Nội dung:</strong> CSS Grid & Flexbox</p>
+        <p><strong>Cam kết:</strong> Không dùng ảnh ngoài, 100% CSS Box thuần</p>
+      </div>
+    </aside>
+
+    <!-- 3. MAIN CONTENT (BÊN PHẢI - CHIẾM TOÀN BỘ PHẦN CÒN LẠI) -->
+    <main class="site-main">
+
+      <!-- Hero Banner giới thiệu -->
+      <section class="hero-box" id="about">
+        <h2>Xin chào, tôi là <span>Huỳnh Mai Phát</span></h2>
+        <p>
+          Đây là sản phẩm bài thực hành <strong>Tuần 3: CSS Layout System (Flexbox & Grid)</strong> theo đúng giáo trình giảng dạy học phần Thiết kế Web. Toàn bộ bố cục được phân chia bằng CSS Grid với thuộc tính <code>grid-template-areas</code>, và danh sách kỹ năng được dàn hàng tự động bằng Flexbox.
+        </p>
+        <div class="hero-tags">
+          <span class="badge-pill">CSS Grid (2 Chiều)</span>
+          <span class="badge-pill">Flexbox (1 Chiều)</span>
+          <span class="badge-pill">Box Model</span>
+          <span class="badge-pill">Zero Images (No img)</span>
+        </div>
+      </section>
+
+      <!-- ==========================================================
+       * HOẠT ĐỘNG 2 (TRANG 28): KHU VỰC KỸ NĂNG (FLEXBOX)
+       * Yêu cầu: Flexbox hiển thị hàng ngang, flex-wrap: wrap,
+       * khoảng cách gap: 15px, căn giữa các item.
+       * ========================================================== -->
+      <section class="content-section" id="skills">
+        <div class="section-heading">
+          <h2><span>⚡</span> Hoạt Động 2: Khu Vực Kỹ Năng (Flexbox System)</h2>
+          <p>Áp dụng thuộc tính <code>display: flex</code>, <code>flex-wrap: wrap</code>, <code>gap: 15px</code> và <code>justify-content: center</code>.</p>
+        </div>
+
+        <div class="skills-flex-container">
+          <div class="skill-pill-card">
+            <span class="skill-icon">🧱</span>
+            <span>HTML5 Semantic (W3C)</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">📐</span>
+            <span>CSS Grid (grid-template-areas)</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">↔️</span>
+            <span>CSS Flexbox (flex-wrap & gap)</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">📦</span>
+            <span>Box Model (Margin & Padding)</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">📱</span>
+            <span>Responsive Web Design</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">🎨</span>
+            <span>CSS Custom Properties (:root)</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">🐙</span>
+            <span>Git & GitHub Workflow</span>
+          </div>
+
+          <div class="skill-pill-card">
+            <span class="skill-icon">🤖</span>
+            <span>Prompt Engineering (Vibe Code)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================
+       * THÁCH THỨC TẠI NHÀ (TRANG 32): "THE GRID MASTER"
+       * Yêu cầu: Lưới hiển thị các dự án (ít nhất 6 item) bằng CSS Grid
+       * sao cho các item có kích thước bằng nhau. XÓA BỎ HOÀN TOÀN ẢNH.
+       * ========================================================== -->
+      <section class="content-section" id="projects">
+        <div class="section-heading">
+          <h2><span>🚀</span> Thách Thức: "The Grid Master" (Lưới 6 Dự Án Bằng Nhau)</h2>
+          <p>Sử dụng CSS Grid <code>repeat(3, 1fr)</code> với <code>gap: 20px</code> theo đúng đề bài trang 32 giáo trình.</p>
+        </div>
+
+        <div class="project-gallery-grid">
+          <!-- Item 1 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 1 (Trang 29)</strong>
+              <span class="code-badge">Holy Grail Layout</span>
+            </div>
+            <h3 class="project-title">1. Holy Grail Grid Layout</h3>
+            <p class="project-desc">
+              Cấu trúc kinh điển gồm 5 phần: Header, Sidebar trái (Menu), Main Content, Sidebar phải (Quảng cáo) và Footer định vị bằng <code>grid-template-areas</code>.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">CSS Grid 2D</span>
+              <span class="tech-tag-sm">5 Khối Vùng</span>
+            </div>
+            <a href="#about" class="project-action-link">Xem Bố Cục &rarr;</a>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 2 (Trang 30)</strong>
+              <span class="code-badge">Flexbox Pricing Cards</span>
+            </div>
+            <h3 class="project-title">2. Bảng Giá Dịch Vụ Flexbox</h3>
+            <p class="project-desc">
+              Bảng giá dịch vụ 3 gói nằm ngang hàng nhau. Nút "Mua ngay" luôn nằm sát đáy dù mô tả dài ngắn khác nhau nhờ <code>margin-top: auto</code>.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">Flexbox Direction</span>
+              <span class="tech-tag-sm">Auto Margin</span>
+            </div>
+            <a href="#pricing" class="project-action-link">Xem Bảng Giá &rarr;</a>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 3 (Trang 30)</strong>
+              <span class="code-badge">CSS Grid Gallery</span>
+            </div>
+            <h3 class="project-title">3. Lưới Khối Tự Do Masonry</h3>
+            <p class="project-desc">
+              Tổ chức các ô hiển thị đan xen nhau bằng các thuộc tính <code>grid-column: span</code> và <code>grid-row: span</code> với khoảng cách đồng nhất <code>gap: 15px</code>.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">Grid Span</span>
+              <span class="tech-tag-sm">Masonry Style</span>
+            </div>
+            <a href="#skills" class="project-action-link">Chi Tiết Lưới &rarr;</a>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 4 (Trang 30)</strong>
+              <span class="code-badge">Complex Nav Bar</span>
+            </div>
+            <h3 class="project-title">4. Thanh Điều Hướng Phức Hợp</h3>
+            <p class="project-desc">
+              Phân bổ 3 nhóm phần tử: Logo (trái), Menu chính (giữa), Nút Action (phải) bằng <code>justify-content: space-between</code> trong Flexbox.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">Space Between</span>
+              <span class="tech-tag-sm">Flex Navbar</span>
+            </div>
+            <a href="#about" class="project-action-link">Xem Header &rarr;</a>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 5 (Trang 30)</strong>
+              <span class="code-badge">Product Page Layout</span>
+            </div>
+            <h3 class="project-title">5. Chi Tiết Sản Phẩm (Grid + Flex)</h3>
+            <p class="project-desc">
+              Kết hợp CSS Grid cho bố cục lớn: Khối hiển thị bên trái (60%) và Thông tin bên phải (40%). Dùng Flexbox dàn hàng các lựa chọn kích cỡ.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">Grid 60/40</span>
+              <span class="tech-tag-sm">Flex Options</span>
+            </div>
+            <a href="#projects" class="project-action-link">Khám Phá &rarr;</a>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="project-box-item">
+            <div class="project-banner-placeholder">
+              <strong>Bài Tập 6 (Trang 30)</strong>
+              <span class="code-badge">Admin Dashboard UI</span>
+            </div>
+            <h3 class="project-title">6. Dashboard Quản Trị Hệ Thống</h3>
+            <p class="project-desc">
+              Bố cục Sidebar cố định bên trái (Fixed Sidebar 250px) và vùng nội dung cuộn bên phải chứa lưới 4 thẻ thống kê và bảng dữ liệu.
+            </p>
+            <div class="project-tags-flex">
+              <span class="tech-tag-sm">Fixed Sidebar</span>
+              <span class="tech-tag-sm">Stats Cards</span>
+            </div>
+            <a href="#about" class="project-action-link">Xem Layout &rarr;</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================================
+       * BÀI TẬP 2 (TRANG 30): BẢNG GIÁ DỊCH VỤ (FLEXBOX CARDS)
+       * Yêu cầu:
+       * - 3 bảng giá (Basic, Pro, Enterprise) nằm ngang hàng nhau
+       * - Nút "Mua ngay" luôn sát đáy qua Flexbox
+       * - Hover phóng to nhẹ (transform: scale) và đổi màu
+       * ========================================================== -->
+      <section class="content-section" id="pricing">
+        <div class="section-heading">
+          <h2><span>🏷️</span> Bài Tập 2 (Trang 30): Thiết Kế Bảng Giá Dịch Vụ</h2>
+          <p>Khai thác sức mạnh của Flexbox Cards: Căn sát đáy nút bấm và hiệu ứng hover scale.</p>
+        </div>
+
+        <div class="pricing-flex-container">
+          <!-- Gói Basic -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Gói Basic</h3>
+              <div class="pricing-price">99.000đ <span>/ tháng</span></div>
+              <p style="font-size: 0.85rem; color: #64748b;">Dành cho sinh viên làm quen nền tảng HTML/CSS.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>Cấu trúc chuẩn Semantic HTML5</li>
+              <li>Flexbox căn chỉnh cơ bản</li>
+              <li>Tài liệu học tập trực tuyến</li>
+            </ul>
+            <a href="#pricing" class="btn-buy-now">Mua Ngay</a>
+          </div>
+
+          <!-- Gói Pro (Nổi bật) -->
+          <div class="pricing-card popular">
+            <span class="popular-badge">Phổ Biến Nhất</span>
+            <div class="pricing-header">
+              <h3>Gói Pro Developer</h3>
+              <div class="pricing-price">299.000đ <span>/ tháng</span></div>
+              <p style="font-size: 0.85rem; color: #64748b;">Dành cho sinh viên chuyên sâu CSS Grid & Layout.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>Toàn bộ tính năng gói Basic</li>
+              <li>Làm chủ CSS Grid 2 chiều phức tạp</li>
+              <li>Bố cục Holy Grail & Dashboard</li>
+              <li>Hỗ trợ sửa lỗi cùng Vibe Code AI</li>
+            </ul>
+            <a href="#pricing" class="btn-buy-now">Mua Ngay</a>
+          </div>
+
+          <!-- Gói Enterprise -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Gói Enterprise</h3>
+              <div class="pricing-price">599.000đ <span>/ tháng</span></div>
+              <p style="font-size: 0.85rem; color: #64748b;">Dành cho nhóm dự án hoàn thiện hệ thống chuẩn W3C.</p>
+            </div>
+            <ul class="pricing-features">
+              <li>Toàn bộ tính năng gói Pro</li>
+              <li>Xây dựng Design System đồng bộ</li>
+              <li>Review mã nguồn chuẩn W3C 0 lỗi</li>
+              <li>Tối ưu hóa hiệu năng render 60 FPS</li>
+            </ul>
+            <a href="#pricing" class="btn-buy-now">Mua Ngay</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 4. FOOTER (TOÀN BỘ CHIỀU NGANG) -->
+    <footer class="site-footer">
+      <p>
+        Bài thực hành Tuần 3: <strong>CSS Layout System (Flexbox & Grid)</strong> • Đại học Lạc Hồng (LHU)
+      </p>
+      <p style="margin-top: 0.4rem;">
+        Sinh viên thực hiện: <span>Huỳnh Mai Phát</span> • Mã học phần: <span>111101</span> • Không dùng ảnh ngoài (Pure CSS Layout)
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

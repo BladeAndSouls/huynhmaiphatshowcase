@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huỳnh Mai Phát | Báo Cáo Thực Hành Tuần 3 & Tuần 4 - ĐH Lạc Hồng</title>
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+    .portal-box {
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    .badge-user {
+      display: inline-block;
+      padding: 0.45rem 1.25rem;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.5);
+      color: #60a5fa;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    h1 span {
+      color: #38bdf8;
+    }
+    p.subtitle {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.6;
+    }
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .portal-card {
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .portal-card:hover {
+      transform: translateY(-4px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      width: fit-content;
+      margin-bottom: 1rem;
+    }
+    .card-tag-t3 {
+      background: rgba(14, 165, 233, 0.2);
+      color: #38bdf8;
+    }
+    .card-tag-t4 {
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+    }
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .btn-launch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-launch:hover {
+      background: #1d4ed8;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal-box">
+    <div class="badge-user">HỌC PHẦN 111101 · ĐẠI HỌC LẠC HỒNG (LHU)</div>
+    <h1>Thực Hành <span>Tuần 3, Tuần 4 & Tuần 5</span></h1>
+    <p class="subtitle">
+      Sinh viên: <strong>Huỳnh Mai Phát</strong> • Báo cáo học phần Thiết kế Web. Đã bổ sung Tuần 5 (The Interactive Showcase) chuẩn theo mẫu portfolio.
+    </p>
+
+    <div class="portal-grid">
+      <!-- Cột Tuần 3 -->
+      <div class="portal-card">
+        <span class="card-tag card-tag-t3">Giáo Trình Tuần 3 (Trang 26 - 32)</span>
+        <h2 class="card-title">CSS Layout System (Flexbox & Grid)</h2>
+        <p class="card-desc">
+          Bố cục chuẩn CSS Grid với <code>grid-template-areas</code> (Header, Sidebar 250px, Main, Footer). Khu vực kỹ năng dùng Flexbox (wrap, gap 15px). Thách thức "The Grid Master" hiển thị 6 dự án bằng nhau. Bảng giá dịch vụ Flexbox Cards sát đáy. <strong>100% không dùng ảnh.</strong>
+        </p>
+        <a href="tuan-3/index.html" class="btn-launch">
+          <span>Xem Bài Tập Tuần 3</span> &rarr;
+        </a>
+      </div>
+
+      <!-- Cột Tuần 4 -->
+      <div class="portal-card">
+        <span class="card-tag card-tag-t4">Tuần 4</span>
+        <h2 class="card-title">Design System & Responsive (Mobile First)</h2>
+        <p class="card-desc">
+          Bộ biến CSS <code>:root</code>, đầy đủ 6 bài tập tự rèn luyện tại nhà (Responsive Typography, Adaptive Card Layout, Smart Nav Hamburger, Dark/Light Mode Switcher, Responsive Grid Gallery, Mobile-First Contact Form) và bảng đối chiếu "Code Tốt" vs "Code Rác".
+        </p>
+        <a href="tuan-4/index.html" class="btn-launch" style="background: #4f46e5;">
+          <span>Xem Bài Tập Tuần 4</span> &rarr;
+        </a>
+      </div>
+
+      <!-- Cột Tuần 5 -->
+      <div class="portal-card">
+        <span class="card-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">Tuần 5 Showcase</span>
+        <h2 class="card-title">The Interactive Showcase (Smart Interface)</h2>
+        <p class="card-desc">
+          Portfolio The Interactive Showcase của <strong>Huỳnh Mai Phát</strong> với Animations mượt mà, Typing Effect, thư viện AOS, 3D Flip Cards tương tác, Parallax Banner và Micro-interactions tối ưu hiệu năng.
+        </p>
+        <a href="tuan-5/index.html" class="btn-launch" style="background: #059669;">
+          <span>Xem Showcase Tuần 5</span> &rarr;
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Huỳnh Mai Phát. Học phần 111101 - Thiết kế Web - Đại học Lạc Hồng.
+    </footer>
+  </div>
+
+</body>
+</html>

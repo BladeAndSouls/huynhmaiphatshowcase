@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huỳnh Mai Phát | Tuần 4: Design System & Tư Duy Responsive (Mobile First)</title>
+
+  <!-- SEO & Meta Thông Tin -->
+  <meta name="description" content="Tuần 4: Design System & Tư Duy Responsive (Mobile First) - Huỳnh Mai Phát.">
+  <meta name="author" content="Huỳnh Mai Phát">
+
+  <!-- Stylesheet Tuần 4 -->
+  <link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+
+  <!-- ==============================================================
+   * SMART NAVIGATION BAR
+   * Desktop: Menu ngang đầy đủ | Mobile (< 768px): Ẩn menu, hiện Hamburger
+   * ============================================================== -->
+  <header class="site-nav">
+    <div class="container nav-wrap">
+      <div class="nav-brand">
+        <span>HMP</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">| Tuần 4</span>
+      </div>
+
+      <!-- Menu máy tính -->
+      <nav class="nav-menu-desktop" aria-label="Điều hướng Desktop">
+        <a href="#variables">Hệ Thống Biến</a>
+        <a href="#typography">Bài 1: Typography</a>
+        <a href="#adaptive-card">Bài 2: Adaptive Card</a>
+        <a href="#gallery">Bài 5: Grid Gallery</a>
+        <a href="#contact-form">Bài 6: Contact Form</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Nút Dark Mode Switcher -->
+        <button class="btn-theme-toggle" type="button" aria-label="Chuyển đổi giao diện">
+          🌙 Chế Độ Tối
+        </button>
+
+        <!-- Nút Hamburger trên Mobile -->
+        <button class="btn-hamburger" type="button" aria-label="Mở Menu Mobile">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu dạng Dropdown khi mở trên Mobile -->
+    <div class="mobile-nav-panel">
+      <ul>
+        <li><a href="#variables">Hệ Thống Biến (:root)</a></li>
+        <li><a href="#typography">Bài 1: Responsive Typography</a></li>
+        <li><a href="#adaptive-card">Bài 2: Adaptive Card</a></li>
+        <li><a href="#gallery">Bài 5: Grid Gallery</a></li>
+        <li><a href="#contact-form">Bài 6: Mobile-First Form</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO INTRO TUẦN 4 -->
+    <section class="section" style="padding-bottom: var(--spacing-base);">
+      <div class="section-title-wrap">
+        <span class="section-tag">Design System & Responsive</span>
+        <h1>Tuần 4: Design System & Tư Duy Responsive</h1>
+        <p>Thực hiện bởi: <strong>Huỳnh Mai Phát</strong></p>
+      </div>
+
+      <!-- Khối tóm tắt hệ thống biến -->
+      <div class="demo-box" id="variables">
+        <h2>1. Hệ Thống Biến CSS (:root)</h2>
+        <p>
+          Thay vì hard-code mã màu và khoảng cách trực tiếp vào từng thẻ, toàn bộ được quy chuẩn tại <code>:root</code> giúp quản lý tập trung và chuyển đổi Dark/Light mode mượt mà:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-base); margin-top: 1rem;">
+          <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--primary-color);">--primary-color</strong>
+            <p style="font-size: 0.8rem; margin: 0.25rem 0 0 0;">Màu xanh chủ đạo</p>
+          </div>
+          <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--secondary-color);">--secondary-color</strong>
+            <p style="font-size: 0.8rem; margin: 0.25rem 0 0 0;">Màu đen/tối bổ trợ</p>
+          </div>
+          <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--text-dark);">--text-dark / --text-muted</strong>
+            <p style="font-size: 0.8rem; margin: 0.25rem 0 0 0;">3 mức xám cho text</p>
+          </div>
+          <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--primary-color);">--spacing-base (15px)</strong>
+            <p style="font-size: 0.8rem; margin: 0.25rem 0 0 0;">Khoảng cách chuẩn</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+     * BÀI 1: RESPONSIVE TYPOGRAPHY SCALE
+     * ============================================================== -->
+    <section class="section" id="typography">
+      <div class="demo-box">
+        <span class="section-tag">Bài 1: Typography System</span>
+        <h2>Responsive Typography Scale</h2>
+        <p>
+          Thiết lập hệ thống cỡ chữ sử dụng biến CSS (<code>--fs-h1</code>, <code>--fs-h2</code>, <code>--fs-h3</code>, <code>--fs-body</code>). Khi màn hình nhỏ hơn <strong>600px</strong>, cỡ chữ tự động thu nhỏ lại để tránh tràn văn bản:
+        </p>
+
+        <div style="border: 1px dashed var(--border-color); padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+          <h1>Heading 1: Tiêu Đề Cấp 1 (Tự động co giãn theo viewport)</h1>
+          <h2>Heading 2: Tiêu Đề Cấp 2 (Chuẩn tỷ lệ hiển thị di động)</h2>
+          <h3>Heading 3: Tiêu Đề Cấp 3 (Phân cấp rõ ràng, dễ đọc)</h3>
+          <p>
+            Đoạn văn bản mẫu (Body paragraph) sử dụng biến <code>--fs-body</code> và <code>--text-muted</code>. Khi bạn mở Chrome DevTools và chuyển sang màn hình điện thoại dưới 600px, toàn bộ các tiêu đề trên sẽ tự động giảm tỷ lệ mượt mà mà không gây vỡ layout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+     * BÀI 2: ADAPTIVE CARD LAYOUT
+     * ============================================================== -->
+    <section class="section" id="adaptive-card">
+      <div class="demo-box">
+        <span class="section-tag">Bài 2: Adaptive Card Layout</span>
+        <h2>Adaptive Card Layout (Đổi Hướng Flexbox)</h2>
+        <p>
+          Sử dụng thuộc tính <code>flex-direction</code>: Trên <strong>Desktop</strong> khối bên trái và nội dung bên phải; trên <strong>Mobile</strong> khối bên trên và nội dung bên dưới:
+        </p>
+
+        <!-- Thẻ Adaptive Card thuần CSS Box (Không dùng ảnh ngoài) -->
+        <div class="adaptive-card">
+          <div class="card-media-box">
+            <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱💻</span>
+            <span>Khối Media Box</span>
+            <span style="font-size: 0.75rem; opacity: 0.8; font-weight: normal;">(Pure CSS)</span>
+          </div>
+          <div class="card-content-box">
+            <span class="section-tag" style="width: fit-content;">Adaptive Component</span>
+            <h3>Thẻ Card Thích Ứng Đa Thiết Bị</h3>
+            <p>
+              Thẻ này áp dụng tư duy Mobile First. Trên điện thoại, thuộc tính <code>flex-direction: column</code> xếp khối màu lên trên và chữ xuống dưới. Khi mở rộng màn hình qua mốc 768px, thẻ tự động chuyển sang <code>flex-direction: row</code> dàn sang hai bên.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--primary-color); font-weight: 700;">
+              Huỳnh Mai Phát • Frontend Developer
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+     * BÀI 5: RESPONSIVE GALLERY WITH CSS GRID
+     * ============================================================== -->
+    <section class="section" id="gallery">
+      <div class="demo-box">
+        <span class="section-tag">Bài 5: Responsive Grid Gallery</span>
+        <h2>Responsive Grid Gallery (Auto-fit & Minmax)</h2>
+        <p>
+          Lưới sử dụng <code>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))</code> với <code>gap: var(--spacing-base)</code>. Lưới tự động xuống dòng và co giãn số cột theo màn hình mà <strong>không cần viết nhiều Media Queries</strong>:
+        </p>
+
+        <div class="grid-autofit-gallery">
+          <div class="gallery-card-item">
+            <div class="card-preview-block">Lưới Card 01</div>
+            <h3>Khối Dự Án 1</h3>
+            <p>Tự động co giãn theo tỷ lệ 1fr.</p>
+          </div>
+
+          <div class="gallery-card-item">
+            <div class="card-preview-block">Lưới Card 02</div>
+            <h3>Khối Dự Án 2</h3>
+            <p>Tối thiểu 250px trước khi xuống dòng.</p>
+          </div>
+
+          <div class="gallery-card-item">
+            <div class="card-preview-block">Lưới Card 03</div>
+            <h3>Khối Dự Án 3</h3>
+            <p>Khoảng cách đồng nhất bằng biến gap.</p>
+          </div>
+
+          <div class="gallery-card-item">
+            <div class="card-preview-block">Lưới Card 04</div>
+            <h3>Khối Dự Án 4</h3>
+            <p>Tương thích hoàn hảo mọi thiết bị.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+     * BÀI 6: MOBILE-FIRST CONTACT FORM
+     * ============================================================== -->
+    <section class="section" id="contact-form">
+      <div class="demo-box">
+        <span class="section-tag">Bài 6: Mobile-First Contact Form</span>
+        <h2>Mobile-First Contact Form</h2>
+        <p>
+          Trên Mobile: các ô nhập liệu chiếm <strong>100% chiều rộng</strong>. Trên Desktop: form được giới hạn chiều rộng <strong>max-width: 600px</strong> và căn giữa trang:
+        </p>
+
+        <form class="contact-form-mobile-first" onsubmit="event.preventDefault(); alert('Gửi form thành công theo chuẩn Tuần 4!');">
+          <div class="form-field">
+            <label for="fullName">Họ và tên:</label>
+            <input type="text" id="fullName" class="form-control-input" value="Huỳnh Mai Phát" required>
+          </div>
+
+          <div class="form-field">
+            <label for="userEmail">Email liên hệ:</label>
+            <input type="email" id="userEmail" class="form-control-input" placeholder="email@example.com" required>
+          </div>
+
+          <div class="form-field">
+            <label for="topic">Chủ đề dự án:</label>
+            <input type="text" id="topic" class="form-control-input" value="Design System & Responsive - Tuần 4" required>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Nội dung phản hồi:</label>
+            <textarea id="message" rows="4" class="form-control-input" placeholder="Nhập ghi chú..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Xác Nhận Gửi Form</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+     * BẢNG ĐỐI CHIẾU "CODE TỐT" VS "CODE RÁC"
+     * ============================================================== -->
+    <section class="section">
+      <div class="demo-box">
+        <span class="section-tag">Quy Chuẩn Code Responsive</span>
+        <h2>Tiêu Chuẩn "Code Tốt" vs "Code Rác" Trong Responsive Design</h2>
+        <p>Bảng đối chiếu kiểm soát chất lượng mã nguồn CSS trong thiết kế Responsive:</p>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Thành phần</th>
+              <th>✅ Code Tốt (Nên dùng)</th>
+              <th>❌ Code Rác (Nên sửa)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chiều rộng</strong></td>
+              <td class="good-code">width: 90%; hoặc max-width: 1200px;</td>
+              <td class="bad-code">width: 1200px; (Cố định gây tràn viền)</td>
+            </tr>
+            <tr>
+              <td><strong>Đơn vị Font</strong></td>
+              <td class="good-code">rem hoặc em (ví dụ: 1.2rem)</td>
+              <td class="bad-code">px (ví dụ: 20px) cứng cho mọi nơi</td>
+            </tr>
+            <tr>
+              <td><strong>Chia cột</strong></td>
+              <td class="good-code">display: grid; hoặc flex;</td>
+              <td class="bad-code">float: left; hoặc display: table;</td>
+            </tr>
+            <tr>
+              <td><strong>Căn lề</strong></td>
+              <td class="good-code">margin: 0 auto;</td>
+              <td class="bad-code">margin-left: 250px; (Cố định cứng)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Bài thực hành Tuần 4: <strong>Design System & Tư Duy Responsive (Mobile First)</strong></p>
+      <p style="margin-top: 0.3rem;">Thực hiện bởi: <strong>Huỳnh Mai Phát</strong></p>
+    </div>
+  </footer>
+
+  <!-- Script điều khiển Tuần 4 -->
+  <script src="js/design-system.js"></script>
+</body>
+</html>

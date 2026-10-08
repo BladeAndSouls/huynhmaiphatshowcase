@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Huỳnh Mai Phát | The Interactive Showcase - Smart Interface</title>
+    <meta name="description" content="Portfolio The Interactive Showcase - Giao diện thông minh với Animations mượt mà, Thư viện AOS, 3D Flip Cards và Micro-interactions tối ưu hiệu năng.">
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Thư viện AOS (Animate On Scroll) CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Stylesheet chính -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION & HAMBURGER (Bài 5)
+         Intro Animation: Slide-Down & Fade-In từ trên xuống
+    ========================== -->
+    <header class="header header-intro">
+        <nav class="navbar">
+
+            <a href="#home" class="logo" aria-label="Trang chủ MaiPhat">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <span class="logo-text">MaiPhat<span class="accent-dot">.</span></span>
+            </a>
+
+            <!-- Checkbox dùng để mở menu mobile (Bài 5) -->
+            <input type="checkbox" id="menu-toggle" aria-label="Mở menu điều hướng">
+
+            <!-- Hamburger Button (Bài 5) -->
+            <label for="menu-toggle" class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="#home" class="menu-link">Trang chủ</a></li>
+                <li><a href="#portfolio" class="menu-link">Showcase Dự Án</a></li>
+                <li><a href="#services" class="menu-link">Dịch Vụ</a></li>
+                <li><a href="#about" class="menu-link">Giới Thiệu</a></li>
+                <li><a href="#skills" class="menu-link">Kỹ Năng</a></li>
+                <li><a href="#contact" class="menu-link">Liên Hệ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-btn" class="theme-toggle-btn" onclick="toggleDarkMode()" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ sáng / tối">
+                    <span class="icon-sun">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </span>
+                    <span class="icon-moon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </span>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Thẻ ngữ nghĩa MAIN bao trọn toàn bộ nội dung chính (Semantic HTML) -->
+    <main id="main-content">
+
+        <!-- =========================
+             HERO & TYPING EFFECT (Bài 3)
+             Intro Animation: Staggered Slide-Up & Scale với cubic-bezier chuẩn vật lý
+        ========================== -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+
+                <div class="status-pill intro-scale-up">
+                    <span class="status-indicator"></span>
+                    <span>Sẵn sàng cho các dự án mới • Tuần 5 Showcase</span>
+                </div>
+
+                <h1 class="hero-title intro-slide-up delay-1">
+                    Xin chào! Tôi là <span class="gradient-text">Huỳnh Mai Phát</span>
+                </h1>
+
+                <!-- Bài 3: Typing Effect -->
+                <div class="typing-container intro-fade-in delay-2">
+                    <div class="typing">Tôi là một Web Developer...</div>
+                </div>
+
+                <p class="hero-desc intro-slide-up delay-3">
+                    Đam mê xây dựng giao diện web mượt mà, tối ưu trải nghiệm người dùng với các kỹ thuật CSS hiện đại, chuyển động vật lý tự nhiên và hiệu ứng thị giác tinh tế.
+                </p>
+
+                <div class="hero-actions intro-slide-up delay-4">
+                    <a href="#portfolio" class="btn btn-primary" id="btn-explore">
+                        <span>Khám phá Showcase</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Liên hệ hợp tác</span>
+                    </a>
+                    <button class="btn btn-mode" onclick="toggleDarkMode()" title="Đổi chế độ giao diện">
+                        <span>🌙 / ☀️ Chuyển Theme</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             MỤC MỚI: THE INTERACTIVE SHOWCASE (PORTFOLIO / SẢN PHẨM)
+             Yêu cầu 2: Thẻ Card giới thiệu sản phẩm có hiệu ứng tương tác 3D Flip / Hover
+             Yêu cầu 3: Scroll Revelation với AOS
+             Yêu cầu 4: Micro-interactions đầy đủ Hover & Active states
+        ========================== -->
+        <section id="portfolio" class="section portfolio-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">THE INTERACTIVE SHOWCASE</span>
+                <h2>Dự Án & Sản Phẩm Tiêu Biểu</h2>
+                <p>Khám phá các sản phẩm với hiệu ứng 3D Flip Card tương tác, hover mượt mà và thông số kỹ thuật chuyên sâu.</p>
+            </div>
+
+            <!-- Bộ lọc danh mục với Micro-interactions -->
+            <div class="portfolio-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">Tất cả (4)</button>
+                <button class="filter-btn" data-filter="webapp">Web App</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="ai">AI Interface</button>
+            </div>
+
+            <!-- Lưới thẻ sản phẩm tương tác 3D (Flex/Grid Layout) -->
+            <div class="portfolio-grid">
+
+                <!-- Sản phẩm 1: NovaPay -->
+                <article class="portfolio-card" data-category="webapp" data-aos="fade-up" data-aos-delay="150">
+                    <div class="portfolio-card-inner">
+                        <!-- Mặt trước -->
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-badge">FinTech • Web App</div>
+                            <div class="portfolio-visual">
+                                <div class="visual-icon">💳</div>
+                                <div class="visual-glow"></div>
+                            </div>
+                            <h3>NovaPay Gateway</h3>
+                            <p class="portfolio-summary">Cổng thanh toán & Dashboard tài chính thời gian thực với độ trễ siêu thấp.</p>
+                            <div class="tech-tags">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <div class="card-action-bar">
+                                <button class="flip-toggle-btn" aria-label="Lật xem chi tiết NovaPay">
+                                    <span>Lật xem chi tiết</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mặt sau -->
+                        <div class="portfolio-card-back">
+                            <div class="back-header">
+                                <span class="back-badge">Kiến Trúc & Hiệu Năng</span>
+                                <h4>NovaPay Details</h4>
+                            </div>
+                            <ul class="portfolio-specs">
+                                <li>
+                                    <strong>Thời gian phản hồi:</strong>
+                                    <span>&lt; 280ms API latency</span>
+                                </li>
+                                <li>
+                                    <strong>Độ sẵn sàng:</strong>
+                                    <span>99.99% High Availability</span>
+                                </li>
+                                <li>
+                                    <strong>Bảo mật:</strong>
+                                    <span>Mã hóa AES-256 & PCI-DSS</span>
+                                </li>
+                                <li>
+                                    <strong>Tính năng:</strong>
+                                    <span>Phân tích dòng tiền Realtime, Biểu đồ động</span>
+                                </li>
+                            </ul>
+                            <div class="card-back-actions">
+                                <a href="#contact" class="portfolio-btn btn-demo">
+                                    <span>Trải nghiệm Demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
+                                <button class="flip-back-btn" aria-label="Quay lại mặt trước">
+                                    <span>← Quay lại</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sản phẩm 2: EcoSphere -->
+                <article class="portfolio-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="250">
+                    <div class="portfolio-card-inner">
+                        <!-- Mặt trước -->
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-badge">E-Commerce • Green</div>
+                            <div class="portfolio-visual">
+                                <div class="visual-icon">🌿</div>
+                                <div class="visual-glow green-glow"></div>
+                            </div>
+                            <h3>EcoSphere Commerce</h3>
+                            <p class="portfolio-summary">Sàn thương mại bền vững với hệ thống gợi ý sản phẩm xanh và giỏ hàng thông minh.</p>
+                            <div class="tech-tags">
+                                <span>Next.js 14</span>
+                                <span>Node.js</span>
+                                <span>GraphQL</span>
+                                <span>Stripe</span>
+                            </div>
+                            <div class="card-action-bar">
+                                <button class="flip-toggle-btn" aria-label="Lật xem chi tiết EcoSphere">
+                                    <span>Lật xem chi tiết</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mặt sau -->
+                        <div class="portfolio-card-back">
+                            <div class="back-header">
+                                <span class="back-badge">Kiến Trúc & Hiệu Năng</span>
+                                <h4>EcoSphere Details</h4>
+                            </div>
+                            <ul class="portfolio-specs">
+                                <li>
+                                    <strong>Điểm Lighthouse:</strong>
+                                    <span>100/100 Mobile & Desktop</span>
+                                </li>
+                                <li>
+                                    <strong>Khả năng tải:</strong>
+                                    <span>15,000+ Đơn hàng / tháng</span>
+                                </li>
+                                <li>
+                                    <strong>Tính năng độc quyền:</strong>
+                                    <span>Bộ tính toán Carbon tiết kiệm</span>
+                                </li>
+                                <li>
+                                    <strong>Thanh toán:</strong>
+                                    <span>Tích hợp Apple Pay & MoMo</span>
+                                </li>
+                            </ul>
+                            <div class="card-back-actions">
+                                <a href="#contact" class="portfolio-btn btn-demo">
+                                    <span>Trải nghiệm Demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
+                                <button class="flip-back-btn" aria-label="Quay lại mặt trước">
+                                    <span>← Quay lại</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sản phẩm 3: AI Spark Studio -->
+                <article class="portfolio-card" data-category="ai" data-aos="fade-up" data-aos-delay="350">
+                    <div class="portfolio-card-inner">
+                        <!-- Mặt trước -->
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-badge">Generative AI • Creative</div>
+                            <div class="portfolio-visual">
+                                <div class="visual-icon">✨</div>
+                                <div class="visual-glow purple-glow"></div>
+                            </div>
+                            <h3>AI Spark Studio</h3>
+                            <p class="portfolio-summary">Studio thiết kế giao diện hỗ trợ AI tạo palette màu, layout CSS và wireframe tự động.</p>
+                            <div class="tech-tags">
+                                <span>Vue 3</span>
+                                <span>Python</span>
+                                <span>FastAPI</span>
+                                <span>WebGL</span>
+                            </div>
+                            <div class="card-action-bar">
+                                <button class="flip-toggle-btn" aria-label="Lật xem chi tiết AI Spark">
+                                    <span>Lật xem chi tiết</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mặt sau -->
+                        <div class="portfolio-card-back">
+                            <div class="back-header">
+                                <span class="back-badge">Kiến Trúc & Hiệu Năng</span>
+                                <h4>AI Spark Details</h4>
+                            </div>
+                            <ul class="portfolio-specs">
+                                <li>
+                                    <strong>Tốc độ Render:</strong>
+                                    <span>120fps GPU Hardware Canvas</span>
+                                </li>
+                                <li>
+                                    <strong>Số Prompts:</strong>
+                                    <span>Hơn 60,000 requests xử lý</span>
+                                </li>
+                                <li>
+                                    <strong>Xuất mã nguồn:</strong>
+                                    <span>HTML5, Tailwind, SCSS sạch 100%</span>
+                                </li>
+                                <li>
+                                    <strong>Hệ thống:</strong>
+                                    <span>Streaming SSE token-by-token</span>
+                                </li>
+                            </ul>
+                            <div class="card-back-actions">
+                                <a href="#contact" class="portfolio-btn btn-demo">
+                                    <span>Trải nghiệm Demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
+                                <button class="flip-back-btn" aria-label="Quay lại mặt trước">
+                                    <span>← Quay lại</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sản phẩm 4: DevConnect Platform -->
+                <article class="portfolio-card" data-category="webapp" data-aos="fade-up" data-aos-delay="450">
+                    <div class="portfolio-card-inner">
+                        <!-- Mặt trước -->
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-badge">Dev Community • Fullstack</div>
+                            <div class="portfolio-visual">
+                                <div class="visual-icon">🌐</div>
+                                <div class="visual-glow cyan-glow"></div>
+                            </div>
+                            <h3>DevConnect Network</h3>
+                            <p class="portfolio-summary">Mạng xã hội lập trình viên tích hợp Live Code Editor và chia sẻ snippet trực tuyến.</p>
+                            <div class="tech-tags">
+                                <span>TypeScript</span>
+                                <span>WebSockets</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                            </div>
+                            <div class="card-action-bar">
+                                <button class="flip-toggle-btn" aria-label="Lật xem chi tiết DevConnect">
+                                    <span>Lật xem chi tiết</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mặt sau -->
+                        <div class="portfolio-card-back">
+                            <div class="back-header">
+                                <span class="back-badge">Kiến Trúc & Hiệu Năng</span>
+                                <h4>DevConnect Details</h4>
+                            </div>
+                            <ul class="portfolio-specs">
+                                <li>
+                                    <strong>Cộng đồng:</strong>
+                                    <span>25,000+ Lập trình viên Active</span>
+                                </li>
+                                <li>
+                                    <strong>Realtime:</strong>
+                                    <span>Độ trễ truyền tin &lt; 50ms qua WS</span>
+                                </li>
+                                <li>
+                                    <strong>Kho thư viện:</strong>
+                                    <span>500,000+ Đoạn code mẫu đã chia sẻ</span>
+                                </li>
+                                <li>
+                                    <strong>Bảo mật:</strong>
+                                    <span>Sandbox Containerized Run-time</span>
+                                </li>
+                            </ul>
+                            <div class="card-back-actions">
+                                <a href="#contact" class="portfolio-btn btn-demo">
+                                    <span>Trải nghiệm Demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
+                                <button class="flip-back-btn" aria-label="Quay lại mặt trước">
+                                    <span>← Quay lại</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             BÀI 4: PARALLAX - DỊCH VỤ THIẾT KẾ WEB
+             AOS Scroll Revelation & Micro-interactions
+        ========================== -->
+        <section id="services" class="parallax">
+            <div class="parallax-overlay"></div>
+
+            <div class="parallax-content">
+                <span class="section-tag" data-aos="fade-down">
+                    DỊCH VỤ THIẾT KẾ WEBSITE
+                </span>
+
+                <h2 data-aos="fade-up" data-aos-delay="100">
+                    Giải pháp Website chuyên nghiệp
+                </h2>
+
+                <p data-aos="fade-up" data-aos-delay="150">
+                    Thiết kế website hiện đại, responsive và tối ưu trải nghiệm người dùng bằng những công nghệ web tiên tiến.
+                </p>
+
+                <div class="service-grid">
+
+                    <!-- Dịch vụ 1 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">💻</div>
+                        <h3>Website doanh nghiệp</h3>
+                        <p>Xây dựng website giới thiệu doanh nghiệp, thương hiệu và sản phẩm chuyên nghiệp.</p>
+                        <div class="service-price">Từ 3.000.000đ</div>
+                        <a href="#contact" class="service-btn">Xem dịch vụ</a>
+                    </div>
+
+                    <!-- Dịch vụ 2 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">🛒</div>
+                        <h3>Website bán hàng</h3>
+                        <p>Thiết kế website thương mại điện tử, quản lý sản phẩm và tối ưu chuyển đổi đơn hàng.</p>
+                        <div class="service-price">Từ 5.000.000đ</div>
+                        <a href="#contact" class="service-btn">Xem dịch vụ</a>
+                    </div>
+
+                    <!-- Dịch vụ 3 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">🚀</div>
+                        <h3>Landing Page</h3>
+                        <p>Landing Page tối ưu chuyển đổi, chuẩn SEO, phù hợp quảng cáo và giới thiệu sản phẩm mới.</p>
+                        <div class="service-price">Từ 1.500.000đ</div>
+                        <a href="#contact" class="service-btn">Xem dịch vụ</a>
+                    </div>
+
+                    <!-- Dịch vụ 4 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon">🎨</div>
+                        <h3>UI/UX Website</h3>
+                        <p>Thiết kế giao diện hiện đại, chuẩn Design System, tối ưu trải nghiệm trên mọi kích thước màn hình.</p>
+                        <div class="service-price">Từ 2.500.000đ</div>
+                        <a href="#contact" class="service-btn">Xem dịch vụ</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================
+             BÀI 2: CARD FLIP (Thông tin nhân sự / Thành viên)
+             Hiệu ứng lật 3D 180 độ mượt mà, hỗ trợ cả Hover và Tap trên thiết bị cảm ứng
+        ========================== -->
+        <section id="about" class="section about-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">HỒ SƠ CÁ NHÂN</span>
+                <h2>Thông tin nhà phát triển</h2>
+                <p>Tương tác với thẻ bên dưới để khám phá thông tin chi tiết</p>
+            </div>
+
+            <div class="flip-card" id="member-card" data-aos="zoom-in" data-aos-delay="150">
+                <div class="flip-card-inner">
+
+                    <!-- Mặt trước -->
+                    <div class="flip-card-front">
+                        <div class="card-badge">Developer Card</div>
+                        
+                        <div class="avatar">
+                            <div class="avatar-glow"></div>
+                            <div class="avatar-inner">
+                                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                        </div>
+
+                        <h3>Huỳnh Mai Phát</h3>
+                        <p class="role-title">Frontend Developer</p>
+
+                        <div class="tech-tags">
+                            <span>HTML5 Semantic</span>
+                            <span>CSS3 / Animations</span>
+                            <span>JavaScript</span>
+                            <span>UI/UX</span>
+                        </div>
+
+                        <div class="flip-instruction">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                            <span>Di chuột hoặc chạm để lật thẻ</span>
+                        </div>
+
+                        <button class="member-flip-btn" aria-label="Lật thẻ thông tin">
+                            Xem thông tin liên hệ ↻
+                        </button>
+                    </div>
+
+                    <!-- Mặt sau -->
+                    <div class="flip-card-back">
+                        <div class="card-badge back-badge">Kết nối trực tiếp</div>
+
+                        <h3>Thông tin liên hệ</h3>
+
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </span>
+                                <div class="item-text">
+                                    <small>Email</small>
+                                    <strong>huynhmaiphat@example.com</strong>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </span>
+                                <div class="item-text">
+                                    <small>Điện thoại</small>
+                                    <strong>0912 345 678</strong>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </span>
+                                <div class="item-text">
+                                    <small>Địa điểm</small>
+                                    <strong>TP. Hồ Chí Minh, Việt Nam</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="back-action-btn">Gửi lời chào ngay</a>
+                        <button class="member-flip-back-btn" aria-label="Quay lại mặt trước">
+                            ← Quay lại mặt trước
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================
+             BÀI 6: SKILL BAR
+             Kích hoạt chuyển động khi cuộn chuột tới (Scroll Revelation)
+        ========================== -->
+        <section id="skills" class="section skills-section">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">NĂNG LỰC CHUYÊN MÔN</span>
+                <h2>Kỹ năng công nghệ</h2>
+                <p>Mức độ thành thạo và kinh nghiệm thực hành trong phát triển Web hiện đại</p>
+            </div>
+
+            <div class="skills-card" id="skills-card-elem" data-aos="fade-up" data-aos-delay="150">
+
+                <div class="skill">
+                    <div class="skill-title">
+                        <div class="skill-info">
+                            <span class="skill-dot dot-html"></span>
+                            <span class="skill-name">HTML5 (Semantic & Accessibility)</span>
+                        </div>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress html" data-width="90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-title">
+                        <div class="skill-info">
+                            <span class="skill-dot dot-css"></span>
+                            <span class="skill-name">CSS3 (Grid, Flexbox, Animations & Cubic-Bezier)</span>
+                        </div>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress css" data-width="85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-title">
+                        <div class="skill-info">
+                            <span class="skill-dot dot-js"></span>
+                            <span class="skill-name">JavaScript & DOM Interactions</span>
+                        </div>
+                        <span class="skill-pct">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress javascript" data-width="75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-title">
+                        <div class="skill-info">
+                            <span class="skill-dot dot-python"></span>
+                            <span class="skill-name">Design Systems & Vibe Coding Prompting</span>
+                        </div>
+                        <span class="skill-pct">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress python" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <div class="skills-footer-chips">
+                    <span class="chip">Responsive Web</span>
+                    <span class="chip">CSS Grid & Flexbox</span>
+                    <span class="chip">AOS Library</span>
+                    <span class="chip">Cubic-Bezier Physics</span>
+                    <span class="chip">Micro-interactions</span>
+                    <span class="chip">GPU Optimization</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CONTACT & FOOTER
+             Micro-interactions cho Contact Cards và Nút liên hệ
+        ========================== -->
+        <section id="contact" class="section contact">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">KẾT NỐI VỚI TÔI</span>
+                <h2>Liên hệ</h2>
+                <p>Cảm ơn bạn đã ghé thăm website! Hãy kết nối để trao đổi thêm về các dự án.</p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="mailto:huynhmaiphat@example.com" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>huynhmaiphat@example.com</p>
+                    <span class="contact-link-label">Gửi email →</span>
+                </a>
+
+                <a href="tel:0912345678" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <h3>Điện thoại</h3>
+                    <p>0912 345 678</p>
+                    <span class="contact-link-label">Gọi trực tiếp →</span>
+                </a>
+
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3>Địa chỉ</h3>
+                    <p>TP. Hồ Chí Minh, Việt Nam</p>
+                    <span class="contact-link-label">Thành phố làm việc</span>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>© 2026 Huỳnh Mai Phát • The Interactive Showcase (Tuần 5) • Thiết kế với CSS Animation & AOS.</p>
+            </footer>
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         BÀI 1: FLOATING ACTION BUTTON (FAB)
+         Pulse Animation & Micro-interactions
+    ========================== -->
+    <a href="#contact" class="fab" aria-label="Liên hệ nhanh">
+        <svg class="fab-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span class="fab-tooltip">Liên hệ ngay</span>
+    </a>
+
+
+    <!-- Thư viện AOS (Animate On Scroll) JavaScript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Kịch bản điều khiển giao diện thông minh (Smart Interface Script) -->
+    <script>
+        // 1. Dark Mode Handler
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            try {
+                localStorage.setItem('portfolio_theme', isDark ? 'dark' : 'light');
+            } catch(e) {}
+        }
+
+        (function initTheme() {
+            try {
+                const savedTheme = localStorage.getItem('portfolio_theme');
+                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.body.classList.add('dark');
+                }
+            } catch(e) {}
+        })();
+
+        // 2. Khởi tạo AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    offset: 70,
+                    disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                });
+            }
+
+            // 3. Tương tác lật thẻ Portfolio (Hỗ trợ Touch & Click)
+            document.querySelectorAll('.flip-toggle-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const card = this.closest('.portfolio-card');
+                    if (card) card.classList.add('is-flipped');
+                });
+            });
+
+            document.querySelectorAll('.flip-back-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const card = this.closest('.portfolio-card');
+                    if (card) card.classList.remove('is-flipped');
+                });
+            });
+
+            // Lật thẻ hồ sơ thành viên (Member Card Flip)
+            const memberCard = document.getElementById('member-card');
+            const memberFlipBtn = document.querySelector('.member-flip-btn');
+            const memberBackBtn = document.querySelector('.member-flip-back-btn');
+
+            if (memberFlipBtn && memberCard) {
+                memberFlipBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    memberCard.classList.add('is-flipped');
+                });
+            }
+
+            if (memberBackBtn && memberCard) {
+                memberBackBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    memberCard.classList.remove('is-flipped');
+                });
+            }
+
+            // 4. Bộ lọc danh mục Portfolio (Category Filter Tabs)
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 30);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px) scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // 5. Scroll Revelation cho Skill Bars (Chỉ chạy khi cuộn tới vị trí quan sát)
+            const skillsElem = document.getElementById('skills-card-elem');
+            if (skillsElem && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            skillsElem.classList.add('is-visible');
+                            obs.unobserve(skillsElem);
+                        }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(skillsElem);
+            } else if (skillsElem) {
+                skillsElem.classList.add('is-visible');
+            }
+
+            // Đóng menu mobile khi click link
+            document.querySelectorAll('.menu-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const menuToggle = document.getElementById('menu-toggle');
+                    if (menuToggle && menuToggle.checked) {
+                        menuToggle.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
