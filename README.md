@@ -1,7 +1,7 @@
 # 📘 BÁO CÁO BÀI TẬP: TUẦN 3, TUẦN 4 & TUẦN 5
 ### GIÁO TRÌNH GIẢNG DẠY · HỌC PHẦN 111101 THIẾT KẾ WEB (ĐẠI HỌC LẠC HỒNG)
 
-- **Sinh viên thực hiện:** **Huỳnh Mai Phát**
+- **Sinh viên thực hiện:** **Nhóm 11**
 - **Mã học phần:** **111101 - Thiết kế Web**
 - **Đơn vị đào tạo:** **Trường Đại học Lạc Hồng (LHU)**
 - **Nội dung thực hiện:**
